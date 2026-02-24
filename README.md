@@ -58,27 +58,27 @@ scalable-data-ingestion-platform/
 git clone https://github.com/<your-username>/scalable-data-ingestion-platform.git
 cd scalable-data-ingestion-platform
 ```
-2. Create Environment File
+### 2. Create Environment File
 ```bash
 cp .env.example .env
 ```
 Edit .env with your PostgreSQL credentials.
 
-3. Build and Run with Docker Compose
+### 3. Build and Run with Docker Compose
 ```bash
 docker-compose up --build
 ```
-This will spin up:
-  -api (FastAPI server)
-  -etl (ETL worker)
-  -db (PostgreSQL)
-
-API Endpoints
-  -Health Check : 
+#### This will spin up:
+  - api (FastAPI server)
+  - etl (ETL worker)
+  - db (PostgreSQL)
+---
+## API Endpoints
+  - #### Health Check : 
   ```bash
   GET /health
 ```
-  -Market Data : 
+  - #### Market Data : 
   ```bash
   GET /v1/market-data
 ```
@@ -109,7 +109,7 @@ This ensures the ETL pipeline is resilient to errors.
   - timestamp (datetime)
   - vwap (float)
   - is_outlier (boolean)
-
+---
 ## Git Best Practices
 - .env is ignored via .gitignore.
 - Include .env.example for reference.
