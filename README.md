@@ -25,6 +25,7 @@ It demonstrates the following capabilities:
 
 ## Project Structure
 ###
+```bash
 scalable-data-ingestion-platform/
 │
 ├─ api/
@@ -47,6 +48,7 @@ scalable-data-ingestion-platform/
 ├─ .gitignore
 ├─ docker-compose.yml
 └─ README.md
+```
 ---
 
 ## Setup
