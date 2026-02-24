@@ -82,36 +82,37 @@ API Endpoints
   ```bash
   GET /v1/market-data
 ```
-ETL Pipeline
-The ETL service:
-  1.Fetches market data from the API.
-  2.Validates each record using Pydantic.
-  3.Drops invalid records and logs the count.
-  4.Calculates VWAP (Volume Weighted Average Price) per instrument.
-  5.Detects outliers (price deviation > 15% from VWAP).
-  6.Inserts processed data into PostgreSQL.
+---
+## ETL Pipeline
+### The ETL service:
+- Fetches market data from the API.
+- Validates each record using Pydantic.
+- Drops invalid records and logs the count.
+- Calculates VWAP (Volume Weighted Average Price) per instrument.
+- Detects outliers (price deviation > 15% from VWAP).
+- Inserts processed data into PostgreSQL.
 Logs are printed to the console with counts and execution time.
 
-Fault Injection
+### Fault Injection
 The API randomly simulates:
-  1.HTTP 500 errors (5% chance)
-  2.Malformed data (5% chance)
+  - HTTP 500 errors (5% chance)
+  - Malformed data (5% chance)
 This ensures the ETL pipeline is resilient to errors.
 
-Database
--PostgreSQL is used for storage.
--Schema is defined in db/init.sql.
--ETL inserts into the table market_data:
-  -instrument_id (string)
-  -price (float)
-  -volume (float)
-  -timestamp (datetime)
-  -vwap (float)
-  -is_outlier (boolean)
+### Database
+- PostgreSQL is used for storage.
+- Schema is defined in db/init.sql.
+- ETL inserts into the table market_data:
+  - instrument_id (string)
+  - price (float)
+  - volume (float)
+  - timestamp (datetime)
+  - vwap (float)
+  - is_outlier (boolean)
 
-Git Best Practices
--.env is ignored via .gitignore.
--Include .env.example for reference.
--Commit messages should be clear and descriptive.
--Use branches for new features or fixes.
+## Git Best Practices
+- .env is ignored via .gitignore.
+- Include .env.example for reference.
+- Commit messages should be clear and descriptive.
+- Use branches for new features or fixes.
 ---
