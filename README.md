@@ -112,8 +112,4 @@ Git Best Practices
 -Include .env.example for reference.
 -Commit messages should be clear and descriptive.
 -Use branches for new features or fixes.
-
-License
-This project is licensed under the MIT License.
-
 ---
