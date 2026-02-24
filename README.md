@@ -24,6 +24,7 @@ It demonstrates the following capabilities:
 ---
 
 ## Project Structure
+###
 scalable-data-ingestion-platform/
 │
 ├─ api/
